@@ -3,7 +3,7 @@ import Navbar from "@/components/Navbar";
 import { poppins, eduCursive } from "@/lib/font";
 
 export const metadata = {
-  title: "Clink | URL Shortner ",
+  title: "Clink | URL Shortener ",
   description:
     "Turn your long, messy URLs into sleek, shareable links in seconds.",
 };
