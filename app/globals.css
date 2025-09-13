@@ -1,26 +1,170 @@
 @import "tailwindcss";
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
+.heading-font {
+  font-family: var(--font-edu-cursive), cursive;
 }
 
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+.poppins {
+  font-family: var(--font-poppins), sans-serif;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+.button {
+  cursor: pointer;
+  position: relative;
+  padding: 8px 20px;
+  font-size: 18px;
+  color: #212121;
+  font-weight: 550;
+  border: 2px solid #a835ff;
+  border-radius: 34px;
+  background-color: transparent;
+  font-weight: 600;
+  transition: all 0.3s cubic-bezier(0.23, 1, 0.32, 1);
+  overflow: hidden;
+  max-width: 100%;
+}
+.button::before {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 120px;
+  height: 120px;
+  border-radius: inherit;
+  z-index: -1;
+  background-color: #bf6aff;
+  transition: all 0.6s cubic-bezier(0.23, 1, 0.32, 1);
 }
 
-body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+.button:hover::before {
+  width: 0px;
+  height: 0px;
+}
+
+.button:hover {
+  color: #a835ff;
+  scale: 1.05;
+}
+
+.button:active {
+  scale: 1;
+}
+
+.git-button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 10px 20px;
+  gap: 15px;
+  background-color: #181717;
+  border: 2px #181717 solid;
+  border-radius: 34px;
+  cursor: pointer;
+  transition: 400ms;
+}
+
+.git-button .text {
+  color: white;
+  font-weight: 600;
+  font-size: 1em;
+  transition: 400ms;
+}
+
+.git-button svg path {
+  transition: 400ms;
+}
+
+.git-button:hover {
+  background-color: #48c465;
+  scale: 1.05;
+}
+
+
+.btn {
+  width: 185px;
+  height: 50px;
+  border-radius: 100px;
+  border: none;
+  transition: all 0.5s ease-in-out;
+  font-size: 20px;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  background: #040f16;
+  color: #f5f5f5;
+  position: relative;
+}
+
+
+.btn .icon {
+  position: absolute;
+  height: 40px;
+  width: 70px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: all 0.5s;
+}
+
+.btn .icon svg {
+  width: 24px;
+  height: 24px;
+  transition: all 0.5s;
+}
+
+.btn .btn-text {
+  transform: translateX(55px);
+  transition: all 0.5s;
+}
+
+.btn:hover .icon {
+  width: 185px; /* Changed from 175px to match button width */
+}
+
+.btn:hover .icon svg {
+  width: 30px;
+  height: 30px;
+}
+
+.btn:hover .btn-text {
+  opacity: 0;
+}
+
+.btn:focus {
+  outline: none;
+}
+
+.btn:active .icon {
+  transform: scale(0.5);
+}
+
+
+.btn.disabled {
+  background: #6b7280;
+  color: #9ca3af;
+  cursor: not-allowed;
+  opacity: 0.6;
+}
+
+.btn.disabled .icon svg {
+  color: #9ca3af;
+}
+
+.btn.disabled:hover .icon {
+  width: 70px;
+}
+
+.btn.disabled:hover .icon svg {
+  width: 24px;
+  height: 24px;
+}
+
+.btn.disabled:hover .btn-text {
+  opacity: 1;
+}
+
+.btn.disabled:active .icon {
+  transform: none;
 }
